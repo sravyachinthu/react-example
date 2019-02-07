@@ -7,9 +7,6 @@ script:
   - docker build -t sravyachinthu/react-example .
   - docker images sravyachinthu/react-example
 
-before_deploy:
-  - docker login -u shravs.ammulu@gmail.com -p Ammulu@143
-
 deploy:
   provider: script
   script: docker push sravyachinthu/react-example
