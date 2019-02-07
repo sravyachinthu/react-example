@@ -4,11 +4,14 @@ services:
 
 
 script:
-  - docker build -t sravyachinthu/react-example2 .
-  - docker images sravyachinthu/react-example2
+  - docker build -t sravyachinthu/react-example .
+  - docker images sravyachinthu/react-example
+
+before_deploy:
+  - docker login -u sravyachinthu -p Ammulu@143
 
 deploy:
   provider: script
-  script: docker push sravyachinthu/react-example2
+  script: docker push sravyachinthu/react-example
   on:
     branch: master
